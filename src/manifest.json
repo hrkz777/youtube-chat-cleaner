@@ -1,0 +1,26 @@
+﻿{
+	"manifest_version": 3,
+	"name": "YouTube Chat Cleaner",
+	"version": "1.0",
+	"description": "YouTubeライブチャットのメモリ使用量を抑えるための拡張機能です",
+	"permissions": [
+		"storage"
+	],
+	"action": {
+		"default_popup": "menu/popup.html"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"*://www.youtube.com/live_chat?*",
+				"*://www.youtube-nocookie.com/live_chat?*"
+			],
+			"js": [
+				"lib/settings.js",
+				"main/youtube-chat-cleaner.js"
+			],
+			"run_at": "document_idle",
+			"all_frames": true
+		}
+	]
+}

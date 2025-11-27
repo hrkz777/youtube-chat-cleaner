@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chat Cleaner Settings</title>
+	<style>
+		body { font-family: sans-serif; min-width: 250px; padding: 10px; }
+		h3 { border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+		label { display: block; margin-top: 10px; font-weight: bold; }
+		input[type="number"], select { width: 100%; padding: 5px; margin-top: 5px; box-sizing: border-box; }
+		button { display: block; width: 100%; padding: 10px; margin-top: 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+		#status { margin-top: 10px; font-size: 0.9em; color: green; }
+	</style>
+</head>
+<body>
+	<h3>YouTube Chat Cleaner</h3>
+	
+	<label for="maxMessages">最大メッセージ数 (10〜5000)</label>
+	<input type="number" id="maxMessages" min="10" max="5000">
+
+	<label for="checkInterval">更新頻度 (ms)</label>
+	<input type="number" id="checkInterval" min="500" max="10000">
+
+	<label for="logging">コンソールにログを出力する</label>
+	<select id="logging">
+		<option value="false">無効</option>
+		<option value="true">有効</option>
+	</select>
+	
+	<button id="saveButton">設定を保存</button>
+	<div id="status"></div>
+
+	<script src="../lib/settings.js"></script>
+	<script src="popup.js"></script>
+</body>
+</html>
