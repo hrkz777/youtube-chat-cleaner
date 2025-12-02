@@ -12,23 +12,24 @@
 	</style>
 </head>
 <body>
-	<h3>YouTube Chat Cleaner</h3>
+	<h3 data-i18n="settingsTitle"></h3>
 	
-	<label for="maxMessages">最大メッセージ数 (10〜5000)</label>
+	<label for="maxMessages" data-i18n="maxMessagesLabel"></label>
 	<input type="number" id="maxMessages" min="10" max="5000">
 
-	<label for="checkInterval">更新頻度 (ms)</label>
+	<label for="checkInterval" data-i18n="checkIntervalLabel"></label>
 	<input type="number" id="checkInterval" min="500" max="10000">
 
-	<label for="logging">コンソールにログを出力する</label>
+	<label for="logging" data-i18n="loggingLabel"></label>
 	<select id="logging">
-		<option value="false">無効</option>
-		<option value="true">有効</option>
+		<option value="true" data-i18n="loggingEnabled"></option>
+		<option value="false" data-i18n="loggingDisabled"></option>
 	</select>
 	
-	<button id="saveButton">設定を保存</button>
+	<button id="saveButton" data-i18n="saveButton"></button>
 	<div id="status"></div>
-
+	
+	<script src="../lib/i18n.js"></script>
 	<script src="../lib/settings.js"></script>
 	<script src="popup.js"></script>
 </body>

@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () =>
 		// 入力値のバリデーション
 		if (isNaN(newMaxMessages) || newMaxMessages < 10 || isNaN(newCheckInterval) || newCheckInterval < 500)
 		{
-			statusDiv.textContent = 'エラー: 入力値が不正です';
+			statusDiv.textContent = chrome.i18n.getMessage("saveError");
 			statusDiv.style.color = 'red';
 			return;
 		}
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () =>
 		},
 		() =>
 		{
-			statusDiv.textContent = '設定を保存しました';
+			statusDiv.textContent = chrome.i18n.getMessage("saveSuccess");
 			statusDiv.style.color = 'green';
 		});
 	});

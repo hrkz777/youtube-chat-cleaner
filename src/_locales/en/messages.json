@@ -1,0 +1,35 @@
+{
+	"extensionName": {
+	  "message": "YouTube Chat Cleaner"
+	},
+	"extensionDescription": {
+	  "message": "Extension to reduce memory usage in YouTube Live Chat."
+	},
+	"settingsTitle": {
+	  "message": "YouTube Chat Cleaner Settings"
+	},
+	"maxMessagesLabel": {
+	  "message": "Max Messages (10–5000)"
+	},
+	"checkIntervalLabel": {
+	  "message": "Update Frequency (ms)"
+	},
+	"loggingLabel": {
+	  "message": "Enable Logging"
+	},
+	"loggingEnabled": {
+	  "message": "Enabled (Output to Console)"
+	},
+	"loggingDisabled": {
+	  "message": "Disabled"
+	},
+	"saveButton": {
+	  "message": "Save Settings"
+	},
+	"saveSuccess": {
+	  "message": "Settings saved! They will take effect immediately."
+	},
+	"saveError": {
+	  "message": "Error: Invalid input values."
+	}
+  }

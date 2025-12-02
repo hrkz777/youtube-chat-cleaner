@@ -1,0 +1,37 @@
+{
+	"extensionName": {
+		"message": "YouTube Chat Cleaner",
+		"description": "拡張機能の名前"
+	},
+	"extensionDescription": {
+		"message": "YouTubeライブチャットのメモリ使用量を抑えるための拡張機能です",
+		"description": "拡張機能の説明"
+	},
+	"settingsTitle": {
+		"message": "YouTube Chat Cleaner 設定"
+	},
+	"maxMessagesLabel": {
+		"message": "最大メッセージ数 (10〜5000)"
+	},
+	"checkIntervalLabel": {
+		"message": "更新頻度 (ms)"
+	},
+	"loggingLabel": {
+		"message": "ログを出力する"
+	},
+	"loggingEnabled": {
+		"message": "有効 (Consoleに出力)"
+	},
+	"loggingDisabled": {
+		"message": "無効"
+	},
+	"saveButton": {
+		"message": "設定を保存"
+	},
+	"saveSuccess": {
+		"message": "設定を保存しました！"
+	},
+	"saveError": {
+		"message": "エラー: 入力値が不正です。"
+	}
+  }
