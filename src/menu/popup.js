@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () =>
 	{
 		const newMaxMessages = parseInt(maxMessagesInput.value);
 		const newCheckInterval = parseInt(checkIntervalInput.value);
-		const newLogging = loggingSelect.value;
+		const newLogging = loggingSelect.value === 'true';
 		
 		// 入力値のバリデーション
 		if (isNaN(newMaxMessages) || newMaxMessages < 10 || isNaN(newCheckInterval) || newCheckInterval < 500)

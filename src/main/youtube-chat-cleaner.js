@@ -17,7 +17,7 @@ const MESSAGE_ITEM_SELECTOR = 'yt-live-chat-text-message-renderer';
 function consoleLog(message)
 {
 	// ログが有効かチェック
-	if (settings.logging === 'true')
+	if (settings.logging)
 	{
 		console.log(`[YouTubeChatCleaner] ${message}`);
 		return;
