@@ -10,6 +10,17 @@
 	"action": {
 		"default_popup": "menu/popup.html"
 	},
+	"web_accessible_resources": [
+		{
+			"resources": [
+				"resources/reload.svg"
+			],
+			"matches": [
+				"*://www.youtube.com/*",
+				"*://www.youtube-nocookie.com/*"
+			]
+		}
+	],
 	"content_scripts": [
 		{
 			"matches": [
@@ -18,7 +29,10 @@
 			],
 			"js": [
 				"lib/settings.js",
-				"main/youtube-chat-cleaner.js"
+				"main/global.js",
+				"main/youtube-chat-cleaner.js",
+				"main/youtube-chat-reloader.js",
+				"main/initialize.js"
 			],
 			"run_at": "document_idle",
 			"all_frames": true

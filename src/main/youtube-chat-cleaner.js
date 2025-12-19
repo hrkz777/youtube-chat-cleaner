@@ -4,25 +4,12 @@
  * ========================================================
  */
 
-// デフォルト設定
-// 内部で利用する設定変数
-let settings = DEFAULT_SETTINGS;
-
 // iframe内のチャットリストのid
 const IFRAME_CHAT_CONTAINER_SELECTOR = '#items';
 // 個々のチャットメッセージ要素のタグ的なやつ
 const MESSAGE_ITEM_SELECTOR = 'yt-live-chat-text-message-renderer'; 
 
-// 設定チェック込みでログ調整
-function consoleLog(message)
-{
-	// ログが有効かチェック
-	if (settings.logging)
-	{
-		console.log(`[YouTubeChatCleaner] ${message}`);
-		return;
-	}
-}
+let intervalId = null;
 
 /**
  * メモリクリーンアップを実行するメイン関数
@@ -33,7 +20,7 @@ function executeCleanup(contentDocument)
 	const chatContainer = contentDocument.querySelector(IFRAME_CHAT_CONTAINER_SELECTOR);
 	if (!chatContainer)
 	{
-		consoleLog('iframe内部のチャットコンテナが見つかりません');
+		consoleError('iframe内部のチャットコンテナが見つかりません');
 		return;
 	}
 
@@ -61,14 +48,6 @@ function executeCleanup(contentDocument)
 	consoleLog(` - 削除数: ${excessCount} 件`);
 	consoleLog(` - 現在のメッセージ数: ${settings.maxMessages} 件`);
 }
-
-/*
- * ========================================================
- * YouTube読み込み時に登録する処理
- * ========================================================
- */
-
-let intervalId = null;
 
 /**
  * メモリクリーンアップを実行するメイン関数
@@ -103,25 +82,3 @@ function setupCleaner()
 		cleanChatMessages();
 	});
 }
-
-/**
- * ライブチャットのDOMがロードされるのを待機し、クリーンアップ処理を開始
- */
-function initialize()
-{
-	setupCleaner();
-}
-
-// 拡張機能の設定が変更されたときに自動で再起動する
-chrome.storage.onChanged.addListener((changes, namespace) =>
-{
-	// syncストレージに変更があったか確認
-	if (namespace === 'sync' && (changes.maxMessages || changes.checkInterval || changes.logging))
-	{
-		consoleLog('設定変更を検出しました。クリーナーを再起動します');
-		setupCleaner();
-	}
-});
-
-// 拡張機能の開始
-initialize();
